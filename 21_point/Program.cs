@@ -15,3 +15,7 @@ namespace _21_point
         }
     }
 }
+static class Data
+{
+    public static int Number { get; set; }
+}

@@ -38,28 +38,30 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label1.Location = new Point(41, 24);
+            label1.Location = new Point(36, 18);
             label1.Name = "label1";
-            label1.Size = new Size(217, 54);
+            label1.Size = new Size(121, 45);
             label1.TabIndex = 0;
-            label1.Text = "Банк: 1000";
+            label1.Text = "Банк: 0";
             label1.Click += label1_Click;
             // 
             // textBox1
             // 
             textBox1.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            textBox1.Location = new Point(41, 135);
+            textBox1.Location = new Point(36, 127);
+            textBox1.Margin = new Padding(3, 2, 3, 2);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(253, 51);
+            textBox1.Size = new Size(222, 43);
             textBox1.TabIndex = 1;
             textBox1.Text = "10";
             // 
             // button1
             // 
             button1.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            button1.Location = new Point(41, 192);
+            button1.Location = new Point(36, 170);
+            button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(253, 60);
+            button1.Size = new Size(221, 45);
             button1.TabIndex = 2;
             button1.Text = "ПОСТАВИТЬ";
             button1.UseVisualStyleBackColor = true;
@@ -69,27 +71,29 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label2.Location = new Point(41, 78);
+            label2.Location = new Point(36, 58);
             label2.Name = "label2";
-            label2.Size = new Size(253, 54);
+            label2.Size = new Size(205, 45);
             label2.TabIndex = 3;
             label2.Text = "Ваша ставка:";
             // 
             // Form3
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(333, 274);
+            ClientSize = new Size(291, 226);
             ControlBox = false;
             Controls.Add(label2);
             Controls.Add(button1);
             Controls.Add(textBox1);
             Controls.Add(label1);
+            Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "Form3";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "СТАВКА";
+            Load += Form3_Load;
             ResumeLayout(false);
             PerformLayout();
         }

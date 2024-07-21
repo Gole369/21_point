@@ -17,9 +17,10 @@ namespace _21_point
         private int bank;
         private int points;
         int n;
-        public Form3(int bid, int bank, int points)
+        public Form3(Form2 form2, int bid, int bank, int points)
         {
             InitializeComponent();
+            this.form2 = form2;
             this.bid = bid;
             this.bank = bank;
             this.points = points;
@@ -37,7 +38,7 @@ namespace _21_point
             {
                 MessageBox.Show("Ставка не должна превышать банк");
             }
-            else if (n < 10 )
+            else if (n < 10)
             {
                 MessageBox.Show("Минимальная ставка: 10 очков");
             }
@@ -47,9 +48,14 @@ namespace _21_point
             }
             else
             {
-                bid = n;
-                this.Close();
+                Data.Number = n;
+                this.Dispose();
             }
+        }
+
+        private void Form3_Load(object sender, EventArgs e)
+        {
+            label1.Text = "Банк: " + bank.ToString();
         }
     }
 }
