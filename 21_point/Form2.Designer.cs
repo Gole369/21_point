@@ -65,7 +65,7 @@ namespace _21_point
             // button1
             // 
             button1.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            button1.Location = new Point(462, 408);
+            button1.Location = new Point(461, 408);
             button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
             button1.Size = new Size(209, 60);

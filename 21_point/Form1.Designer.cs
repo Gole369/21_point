@@ -80,9 +80,9 @@
             label2.Font = new Font("Segoe UI", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label2.Location = new Point(340, 58);
             label2.Name = "label2";
-            label2.Size = new Size(390, 47);
+            label2.Size = new Size(302, 47);
             label2.TabIndex = 3;
-            label2.Text = "ТАБЛИЦА РЕКОРДОВ";
+            label2.Text = "ТАБЛИЦА маши";
             // 
             // dataGridView1
             // 
