@@ -66,9 +66,10 @@ namespace _21_point
             // button1
             // 
             button1.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            button1.Location = new Point(527, 544);
+            button1.Location = new Point(461, 408);
+            button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(239, 80);
+            button1.Size = new Size(209, 60);
             button1.TabIndex = 2;
             button1.Text = "ВЗЯТЬ КАРТУ";
             button1.UseVisualStyleBackColor = true;
@@ -77,9 +78,10 @@ namespace _21_point
             // button2
             // 
             button2.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            button2.Location = new Point(773, 544);
+            button2.Location = new Point(676, 408);
+            button2.Margin = new Padding(3, 2, 3, 2);
             button2.Name = "button2";
-            button2.Size = new Size(125, 80);
+            button2.Size = new Size(109, 60);
             button2.TabIndex = 3;
             button2.Text = "ПАС";
             button2.UseVisualStyleBackColor = true;
@@ -87,9 +89,10 @@ namespace _21_point
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(43, 357);
+            pictureBox1.Location = new Point(38, 268);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(120, 171);
+            pictureBox1.Size = new Size(105, 128);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 4;
             pictureBox1.TabStop = false;
@@ -98,9 +101,9 @@ namespace _21_point
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label1.Location = new Point(23, 544);
+            label1.Location = new Point(20, 408);
             label1.Name = "label1";
-            label1.Size = new Size(302, 54);
+            label1.Size = new Size(243, 45);
             label1.TabIndex = 16;
             label1.Text = "ВАШИ ОЧКИ: 0";
             // 
@@ -108,18 +111,19 @@ namespace _21_point
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label2.Location = new Point(23, 39);
+            label2.Location = new Point(20, 29);
             label2.Name = "label2";
-            label2.Size = new Size(308, 54);
+            label2.Size = new Size(249, 45);
             label2.TabIndex = 17;
             label2.Text = "БАНК: 0 ОЧКОВ";
             // 
             // button3
             // 
             button3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            button3.Location = new Point(827, 41);
+            button3.Location = new Point(724, 31);
+            button3.Margin = new Padding(3, 2, 3, 2);
             button3.Name = "button3";
-            button3.Size = new Size(70, 69);
+            button3.Size = new Size(61, 52);
             button3.TabIndex = 21;
             button3.Text = "МЕНЮ";
             button3.UseVisualStyleBackColor = true;
@@ -128,32 +132,33 @@ namespace _21_point
             // button4
             // 
             button4.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            button4.Location = new Point(719, 41);
+            button4.Location = new Point(629, 31);
+            button4.Margin = new Padding(3, 2, 3, 2);
             button4.Name = "button4";
-            button4.Size = new Size(103, 69);
+            button4.Size = new Size(90, 52);
             button4.TabIndex = 23;
             button4.Text = "ПРАВИЛА";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point, 204);
             label3.ForeColor = SystemColors.ControlText;
-            label3.Location = new Point(277, 295);
+            label3.Location = new Point(242, 221);
             label3.Name = "label3";
-            label3.Size = new Size(357, 54);
+            label3.Size = new Size(290, 45);
             label3.TabIndex = 24;
             label3.Text = "выйгрыш: 0 очков";
-            label3.Click += label3_Click;
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label4.Location = new Point(808, 173);
+            label4.Location = new Point(707, 130);
             label4.Name = "label4";
-            label4.Size = new Size(45, 54);
+            label4.Size = new Size(37, 45);
             label4.TabIndex = 25;
             label4.Text = "0";
             // 
@@ -161,89 +166,98 @@ namespace _21_point
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label5.Location = new Point(808, 413);
+            label5.Location = new Point(707, 310);
             label5.Name = "label5";
-            label5.Size = new Size(45, 54);
+            label5.Size = new Size(37, 45);
             label5.TabIndex = 26;
             label5.Text = "0";
             // 
             // pictureBox2
             // 
-            pictureBox2.Location = new Point(192, 357);
+            pictureBox2.Location = new Point(168, 268);
+            pictureBox2.Margin = new Padding(3, 2, 3, 2);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(120, 171);
+            pictureBox2.Size = new Size(105, 128);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 27;
             pictureBox2.TabStop = false;
             // 
             // pictureBox3
             // 
-            pictureBox3.Location = new Point(341, 357);
+            pictureBox3.Location = new Point(298, 268);
+            pictureBox3.Margin = new Padding(3, 2, 3, 2);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(120, 171);
+            pictureBox3.Size = new Size(105, 128);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 28;
             pictureBox3.TabStop = false;
             // 
             // pictureBox4
             // 
-            pictureBox4.Location = new Point(488, 357);
+            pictureBox4.Location = new Point(427, 268);
+            pictureBox4.Margin = new Padding(3, 2, 3, 2);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(120, 171);
+            pictureBox4.Size = new Size(105, 128);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox4.TabIndex = 29;
             pictureBox4.TabStop = false;
             // 
             // pictureBox5
             // 
-            pictureBox5.Location = new Point(635, 357);
+            pictureBox5.Location = new Point(556, 268);
+            pictureBox5.Margin = new Padding(3, 2, 3, 2);
             pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(120, 171);
+            pictureBox5.Size = new Size(105, 128);
             pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox5.TabIndex = 30;
             pictureBox5.TabStop = false;
             // 
             // pictureBox6
             // 
-            pictureBox6.Location = new Point(43, 115);
+            pictureBox6.Location = new Point(38, 86);
+            pictureBox6.Margin = new Padding(3, 2, 3, 2);
             pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(120, 171);
+            pictureBox6.Size = new Size(105, 128);
             pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox6.TabIndex = 35;
             pictureBox6.TabStop = false;
             // 
             // pictureBox7
             // 
-            pictureBox7.Location = new Point(192, 115);
+            pictureBox7.Location = new Point(168, 86);
+            pictureBox7.Margin = new Padding(3, 2, 3, 2);
             pictureBox7.Name = "pictureBox7";
-            pictureBox7.Size = new Size(120, 171);
+            pictureBox7.Size = new Size(105, 128);
             pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox7.TabIndex = 36;
             pictureBox7.TabStop = false;
             // 
             // pictureBox8
             // 
-            pictureBox8.Location = new Point(341, 115);
+            pictureBox8.Location = new Point(298, 86);
+            pictureBox8.Margin = new Padding(3, 2, 3, 2);
             pictureBox8.Name = "pictureBox8";
-            pictureBox8.Size = new Size(120, 171);
+            pictureBox8.Size = new Size(105, 128);
             pictureBox8.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox8.TabIndex = 39;
             pictureBox8.TabStop = false;
             // 
             // pictureBox9
             // 
-            pictureBox9.Location = new Point(488, 115);
+            pictureBox9.Location = new Point(427, 86);
+            pictureBox9.Margin = new Padding(3, 2, 3, 2);
             pictureBox9.Name = "pictureBox9";
-            pictureBox9.Size = new Size(120, 171);
+            pictureBox9.Size = new Size(105, 128);
             pictureBox9.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox9.TabIndex = 38;
             pictureBox9.TabStop = false;
             // 
             // pictureBox10
             // 
-            pictureBox10.Location = new Point(635, 115);
+            pictureBox10.Location = new Point(556, 86);
+            pictureBox10.Margin = new Padding(3, 2, 3, 2);
             pictureBox10.Name = "pictureBox10";
-            pictureBox10.Size = new Size(120, 171);
+            pictureBox10.Size = new Size(105, 128);
             pictureBox10.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox10.TabIndex = 40;
             pictureBox10.TabStop = false;
@@ -257,9 +271,10 @@ namespace _21_point
             // 
             button5.Enabled = false;
             button5.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            button5.Location = new Point(537, 41);
+            button5.Location = new Point(470, 31);
+            button5.Margin = new Padding(3, 2, 3, 2);
             button5.Name = "button5";
-            button5.Size = new Size(176, 69);
+            button5.Size = new Size(154, 52);
             button5.TabIndex = 41;
             button5.Text = "ПРОДОЛЖИТЬ";
             button5.UseVisualStyleBackColor = true;
@@ -267,10 +282,10 @@ namespace _21_point
             // 
             // Form2
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 255, 192);
-            ClientSize = new Size(933, 653);
+            ClientSize = new Size(816, 490);
             ControlBox = false;
             Controls.Add(button5);
             Controls.Add(pictureBox10);
@@ -293,12 +308,12 @@ namespace _21_point
             Controls.Add(button2);
             Controls.Add(button1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "Form2";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form2";
-            Load += Form2_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();

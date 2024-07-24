@@ -30,8 +30,15 @@ namespace _21_point
 
         public bool flag = false;
 
+
+        public List<int> rating = new List<int>();
+
         //public string path_data = "D:\\Documents\\практика\\21_point\\data";
-        public string path_data = "C:\\Users\\Георгий\\Documents\\практика\\21_point\\21_point\\data\\";
+        //public string path_data = "C:\\Users\\Георгий\\Documents\\практика\\21_point\\21_point\\data\\";
+
+        public string path_data = AppDomain.CurrentDomain.BaseDirectory.ToString() + "data\\";
+        public string path_rules = AppDomain.CurrentDomain.BaseDirectory.ToString() + "game_rules.txt";
+        public string path_rating = AppDomain.CurrentDomain.BaseDirectory.ToString() + "rating.txt";
 
 
         public Dictionary<int, int> value_card = new Dictionary<int, int>();
@@ -111,21 +118,23 @@ namespace _21_point
                 pictureBox1.Image = null;
 
             }
-            if (pictureBox2.Image != null) { 
+            if (pictureBox2.Image != null)
+            {
                 pictureBox2.Image.Dispose(); pictureBox2.Image = null;
-            
-            }  
-            if (pictureBox3.Image != null) { 
-                pictureBox3.Image.Dispose(); pictureBox3.Image = null;
-            
+
             }
-            if(pictureBox4.Image != null)
+            if (pictureBox3.Image != null)
+            {
+                pictureBox3.Image.Dispose(); pictureBox3.Image = null;
+
+            }
+            if (pictureBox4.Image != null)
             {
                 pictureBox4.Image.Dispose(); pictureBox4.Image = null;
             }
-            if (pictureBox5.Image != null) {  pictureBox5.Image.Dispose(); pictureBox5.Image = null; }
-            if (pictureBox6.Image != null) { pictureBox6.Image.Dispose(); pictureBox6.Image = null; }  
-            if(pictureBox7.Image != null) { pictureBox7.Image.Dispose(); pictureBox7.Image = null; }
+            if (pictureBox5.Image != null) { pictureBox5.Image.Dispose(); pictureBox5.Image = null; }
+            if (pictureBox6.Image != null) { pictureBox6.Image.Dispose(); pictureBox6.Image = null; }
+            if (pictureBox7.Image != null) { pictureBox7.Image.Dispose(); pictureBox7.Image = null; }
             if (pictureBox8.Image != null) { pictureBox8.Image.Dispose(); pictureBox8.Image = null; }
             if (pictureBox9.Image != null) { pictureBox9.Image.Dispose(); pictureBox9.Image = null; }
             if (pictureBox10.Image != null) { pictureBox10.Image.Dispose(); pictureBox10.Image = null; }
@@ -142,13 +151,15 @@ namespace _21_point
 
         private void button3_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Вы хотите сохранить очки?","Выход", MessageBoxButtons.YesNo);
-            if(result == DialogResult.Yes)
+            DialogResult result = MessageBox.Show("Вы хотите сохранить очки?", "Выход", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
             {
                 form1.ShowInTaskbar = true;
                 form1.Opacity = 100;
                 form1.Enabled = true;
                 form1.BringToFront();
+
+                update_rating();
 
                 var screen = Screen.FromControl(form1);
                 form1.Top = screen.Bounds.Height / 2 - form1.Height / 2;
@@ -157,14 +168,29 @@ namespace _21_point
             }
         }
 
-        private void Form2_Load(object sender, EventArgs e)
+        private async void update_rating()
         {
+            rating.Clear();
+            using (StreamReader reader = new StreamReader(path_rating))
+            {
+                int num;
+                for (int i = 0; i < 10; i++)
+                {
+                    num = Convert.ToInt32(reader.ReadLine());
+                    rating.Add(num);
+                }
+            }
+            rating.Add(points);
+            rating.Sort();
 
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
+            rating.Reverse();
+            using (StreamWriter writer = new StreamWriter(path_rating, false))
+            {
+                for (int i = 0; i < 10; i++)
+                {
+                    await writer.WriteLineAsync(rating[i].ToString());
+                }
+            }
         }
         private void draw()
         {
@@ -214,17 +240,17 @@ namespace _21_point
 
         private int cnd()
         {
-            if (bank_points < 17 && p < 4)
+            if (versus())
+            {
+                return -1;
+            }
+            else if (bank_points < 17 && p < 4)
             {
                 return 0;
             }
             else if (bank_points >= 17)
             {
                 return 1;
-            }
-            else if (versus())
-            {
-                return -1;
             }
             return 0;
         }
@@ -269,6 +295,10 @@ namespace _21_point
             {
                 win();
             }
+            else if (bank_points == player_points)
+            {
+                lose();
+            }
             else if (versus())
             {
                 lose();
@@ -310,6 +340,7 @@ namespace _21_point
                     break;
             }
             k++;
+            if (k == 5) { button1.Enabled = false; }
             if (player_points > 21) { lose(); }
             else if (player_points == 21) { win(); }
         }
@@ -328,6 +359,16 @@ namespace _21_point
         {
             new_game();
 
+        }
+
+        private async void button4_Click(object sender, EventArgs e)
+        {
+            using (StreamReader reader =  new StreamReader(path_rules))
+            {
+                string text = await reader.ReadToEndAsync();
+                MessageBox.Show(text);
+                reader.ReadToEnd();
+            }
         }
     }
 }
