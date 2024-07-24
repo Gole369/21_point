@@ -30,7 +30,8 @@ namespace _21_point
 
         public bool flag = false;
 
-        public string path_data = "D:\\Documents\\практика\\21_point\\data\\";
+        //public string path_data = "D:\\Documents\\практика\\21_point\\data";
+        public string path_data = "C:\\Users\\Георгий\\Documents\\практика\\21_point\\21_point\\data\\";
 
 
         public Dictionary<int, int> value_card = new Dictionary<int, int>();
@@ -79,6 +80,13 @@ namespace _21_point
             var screen = Screen.FromControl(this);
             this.Top = screen.Bounds.Height / 2 - this.Height / 2;
             this.Left = screen.Bounds.Width / 2 - this.Width / 2;
+
+            new_game();
+        }
+
+        private void new_game()
+        {
+
             form3 = new Form3(this, this.bid, this.bank, this.points);
             form3.ShowDialog();
 
@@ -87,26 +95,71 @@ namespace _21_point
             creat_deck();
 
             deck = deck_game();
+
+            bank_points = 0;
+            player_points = 0;
+
+            bank -= bid;
+            points -= bid;
+            draw();
+
+            if (pictureBox1.Image != null)
+
+            {
+                pictureBox1.Image.Dispose();
+
+                pictureBox1.Image = null;
+
+            }
+            if (pictureBox2.Image != null) { 
+                pictureBox2.Image.Dispose(); pictureBox2.Image = null;
+            
+            }  
+            if (pictureBox3.Image != null) { 
+                pictureBox3.Image.Dispose(); pictureBox3.Image = null;
+            
+            }
+            if(pictureBox4.Image != null)
+            {
+                pictureBox4.Image.Dispose(); pictureBox4.Image = null;
+            }
+            if (pictureBox5.Image != null) {  pictureBox5.Image.Dispose(); pictureBox5.Image = null; }
+            if (pictureBox6.Image != null) { pictureBox6.Image.Dispose(); pictureBox6.Image = null; }  
+            if(pictureBox7.Image != null) { pictureBox7.Image.Dispose(); pictureBox7.Image = null; }
+            if (pictureBox8.Image != null) { pictureBox8.Image.Dispose(); pictureBox8.Image = null; }
+            if (pictureBox9.Image != null) { pictureBox9.Image.Dispose(); pictureBox9.Image = null; }
+            if (pictureBox10.Image != null) { pictureBox10.Image.Dispose(); pictureBox10.Image = null; }
+
+            label4.Text = "0";
+            label5.Text = "0";
+
+
+
+            button5.Enabled = false;
+            button1.Enabled = true;
+            button2.Enabled = true;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            form1.ShowInTaskbar = true;
-            form1.Opacity = 100;
-            form1.Enabled = true;
-            form1.BringToFront();
+            DialogResult result = MessageBox.Show("Вы хотите сохранить очки?","Выход", MessageBoxButtons.YesNo);
+            if(result == DialogResult.Yes)
+            {
+                form1.ShowInTaskbar = true;
+                form1.Opacity = 100;
+                form1.Enabled = true;
+                form1.BringToFront();
 
-            var screen = Screen.FromControl(form1);
-            form1.Top = screen.Bounds.Height / 2 - form1.Height / 2;
-            form1.Left = screen.Bounds.Width / 2 - form1.Width / 2;
-            this.Close();
+                var screen = Screen.FromControl(form1);
+                form1.Top = screen.Bounds.Height / 2 - form1.Height / 2;
+                form1.Left = screen.Bounds.Width / 2 - form1.Width / 2;
+                this.Close();
+            }
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            bank -= bid;
-            points -= bid;
-            draw();
+
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -118,6 +171,7 @@ namespace _21_point
             label1.Text = "Ваши очки " + (points).ToString();
             label2.Text = "Банк " + (bank).ToString();
             label3.Text = "Выйгрыш " + (bid * 2).ToString();
+            label3.BackColor = Color.LightYellow;
         }
         private void lose()
         {
@@ -128,6 +182,11 @@ namespace _21_point
 
             button1.Enabled = false;
             button2.Enabled = false;
+
+            if (points > 10)
+            {
+                button5.Enabled = true;
+            }
         }
         private void win()
         {
@@ -139,6 +198,7 @@ namespace _21_point
 
             button1.Enabled = false;
             button2.Enabled = false;
+            button5.Enabled = true;
         }
         private void time_()
         {
@@ -147,6 +207,28 @@ namespace _21_point
             while (flag) Application.DoEvents();
             timer1.Enabled = false;
         }
+        private bool versus()
+        {
+            return player_points < bank_points;
+        }
+
+        private int cnd()
+        {
+            if (bank_points < 17 && p < 4)
+            {
+                return 0;
+            }
+            else if (bank_points >= 17)
+            {
+                return 1;
+            }
+            else if (versus())
+            {
+                return -1;
+            }
+            return 0;
+        }
+
         private void logic()
         {
             int w = 0;
@@ -177,12 +259,23 @@ namespace _21_point
                         break;
                 }
                 p++;
-                if (bank_points > 21 || p == 5)
-                {
-                    win();
-                    w = 1;
-                }
+
+                w = cnd();
+
                 time_();
+            }
+
+            if (bank_points > 21)
+            {
+                win();
+            }
+            else if (versus())
+            {
+                lose();
+            }
+            else
+            {
+                win();
             }
 
             /*
@@ -218,6 +311,7 @@ namespace _21_point
             }
             k++;
             if (player_points > 21) { lose(); }
+            else if (player_points == 21) { win(); }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -228,6 +322,12 @@ namespace _21_point
         private void timer1_Tick(object sender, EventArgs e)
         {
             flag = false;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            new_game();
+
         }
     }
 }

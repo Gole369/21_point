@@ -37,3 +37,4 @@ D:\Documents\практика\21_point\obj\Debug\net8.0-windows\refint\21_point.
 D:\Documents\практика\21_point\obj\Debug\net8.0-windows\21_point.pdb
 D:\Documents\практика\21_point\obj\Debug\net8.0-windows\21_point.genruntimeconfig.cache
 D:\Documents\практика\21_point\obj\Debug\net8.0-windows\ref\21_point.dll
+C:\Users\Георгий\Documents\практика\21_point\21_point\obj\Debug\net8.0-windows\21_point.sourcelink.json

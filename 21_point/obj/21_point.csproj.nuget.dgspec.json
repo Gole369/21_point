@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Documents\\практика\\21_point\\21_point.csproj": {}
+    "C:\\Users\\Георгий\\Documents\\практика\\21_point\\21_point\\21_point.csproj": {}
   },
   "projects": {
-    "D:\\Documents\\практика\\21_point\\21_point.csproj": {
+    "C:\\Users\\Георгий\\Documents\\практика\\21_point\\21_point\\21_point.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Documents\\практика\\21_point\\21_point.csproj",
+        "projectUniqueName": "C:\\Users\\Георгий\\Documents\\практика\\21_point\\21_point\\21_point.csproj",
         "projectName": "21_point",
-        "projectPath": "D:\\Documents\\практика\\21_point\\21_point.csproj",
-        "packagesPath": "C:\\Users\\George\\.nuget\\packages\\",
-        "outputPath": "D:\\Documents\\практика\\21_point\\obj\\",
+        "projectPath": "C:\\Users\\Георгий\\Documents\\практика\\21_point\\21_point\\21_point.csproj",
+        "packagesPath": "C:\\Users\\Георгий\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Георгий\\Documents\\практика\\21_point\\21_point\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\George\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Георгий\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
