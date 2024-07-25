@@ -213,7 +213,7 @@ namespace _21_point
             button1.Enabled = false;
             button2.Enabled = false;
 
-            if (points > 10)
+            if (points >= 10)
             {
                 button5.Enabled = true;
             }
