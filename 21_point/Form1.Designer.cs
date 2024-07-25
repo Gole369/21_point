@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             label1 = new Label();
             button1 = new Button();
             button2 = new Button();
@@ -97,11 +98,12 @@
             // 
             // listBox1
             // 
+            listBox1.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
             listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
+            listBox1.ItemHeight = 20;
             listBox1.Location = new Point(340, 125);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(375, 244);
+            listBox1.Size = new Size(375, 224);
             listBox1.TabIndex = 6;
             // 
             // button4
@@ -132,12 +134,13 @@
             Controls.Add(button1);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form1";
+            Text = "ИГРА";
             Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();

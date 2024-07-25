@@ -19,7 +19,7 @@ namespace _21_point
         Form1 form1;
         Form3 form3;
         public int bid = 10;
-        public int bank = 300;
+        public int bank = 0;
         public int points = 100;
         public int player_points = 0;
         public int bank_points = 0;
@@ -93,6 +93,10 @@ namespace _21_point
 
         private void new_game()
         {
+            if(bank < 10)
+            {
+                bank = 300;
+            }
 
             form3 = new Form3(this, this.bid, this.bank, this.points);
             form3.ShowDialog();
@@ -151,7 +155,7 @@ namespace _21_point
 
         private void button3_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Вы хотите сохранить очки?", "Выход", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show("Вы хотите закончить игру?", "Выход", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
                 form1.ShowInTaskbar = true;

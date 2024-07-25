@@ -55,7 +55,8 @@ namespace _21_point
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            label1.Text = "Банк: " + bank.ToString();
+            label4.Text = Convert.ToString(bank);
+            label5.Text = Convert.ToString(points);
         }
     }
 }

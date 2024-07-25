@@ -1,0 +1,5 @@
+D:\Загрузки\21_point.exe
+D:\Загрузки\21_point.dll
+D:\Загрузки\21_point.deps.json
+D:\Загрузки\21_point.runtimeconfig.json
+D:\Загрузки\21_point.pdb
