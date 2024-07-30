@@ -61,6 +61,7 @@
             // 
             // button1
             // 
+            button1.BackColor = Color.FromArgb(128, 255, 128);
             button1.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 204);
             button1.Location = new Point(32, 305);
             button1.Margin = new Padding(3, 2, 3, 2);
@@ -68,7 +69,7 @@
             button1.Size = new Size(221, 45);
             button1.TabIndex = 2;
             button1.Text = "ПОСТАВИТЬ";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // label2

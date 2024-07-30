@@ -30,6 +30,7 @@ namespace _21_point
 
         public bool flag = false;
 
+        public bool theme = true;
 
         public List<int> rating = new List<int>();
 
@@ -76,13 +77,23 @@ namespace _21_point
             }
         }
 
-        public Form2(Form1 form1)
+        public Form2(Form1 form1, bool theme)
         {
             InitializeComponent();
             this.form1 = form1;
             form1.Opacity = 0;
             form1.Enabled = false;
             form1.ShowInTaskbar = false;
+
+            this.theme = theme;
+            if (theme == true)
+            {
+                this.BackColor = Color.FromArgb(255, 255, 192);
+            }
+            else
+            {
+                this.BackColor = Color.FromArgb(70, 50, 160);
+            }
 
             var screen = Screen.FromControl(this);
             this.Top = screen.Bounds.Height / 2 - this.Height / 2;

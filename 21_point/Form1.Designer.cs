@@ -36,6 +36,7 @@
             button3 = new Button();
             listBox1 = new ListBox();
             button4 = new Button();
+            button5 = new Button();
             SuspendLayout();
             // 
             // label1
@@ -51,6 +52,7 @@
             // 
             // button1
             // 
+            button1.BackColor = Color.FromArgb(192, 255, 192);
             button1.Font = new Font("Segoe UI", 25.8000011F, FontStyle.Regular, GraphicsUnit.Point, 204);
             button1.Location = new Point(73, 156);
             button1.Margin = new Padding(3, 2, 3, 2);
@@ -58,11 +60,12 @@
             button1.Size = new Size(186, 60);
             button1.TabIndex = 1;
             button1.Text = "ИГРАТЬ";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // button2
             // 
+            button2.BackColor = Color.FromArgb(192, 255, 255);
             button2.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 204);
             button2.Location = new Point(73, 220);
             button2.Margin = new Padding(3, 2, 3, 2);
@@ -70,7 +73,7 @@
             button2.Size = new Size(186, 60);
             button2.TabIndex = 2;
             button2.Text = "ПРАВИЛА";
-            button2.UseVisualStyleBackColor = true;
+            button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
             // label2
@@ -86,14 +89,15 @@
             // 
             // button3
             // 
+            button3.BackColor = Color.FromArgb(255, 128, 128);
             button3.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            button3.Location = new Point(73, 285);
+            button3.Location = new Point(73, 388);
             button3.Margin = new Padding(3, 2, 3, 2);
             button3.Name = "button3";
             button3.Size = new Size(186, 60);
             button3.TabIndex = 5;
             button3.Text = "ВЫХОД";
-            button3.UseVisualStyleBackColor = true;
+            button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
             // 
             // listBox1
@@ -118,6 +122,19 @@
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
             // 
+            // button5
+            // 
+            button5.BackColor = Color.FromArgb(255, 255, 128);
+            button5.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            button5.Location = new Point(73, 284);
+            button5.Margin = new Padding(3, 2, 3, 2);
+            button5.Name = "button5";
+            button5.Size = new Size(186, 99);
+            button5.TabIndex = 8;
+            button5.Text = "СВЕТЛАЯ\r\nТЕМА";
+            button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -126,6 +143,7 @@
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(816, 490);
             ControlBox = false;
+            Controls.Add(button5);
             Controls.Add(button4);
             Controls.Add(listBox1);
             Controls.Add(button3);
@@ -155,5 +173,6 @@
         private Button button3;
         private ListBox listBox1;
         private Button button4;
+        private Button button5;
     }
 }

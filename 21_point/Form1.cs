@@ -13,10 +13,43 @@ namespace _21_point
 
         public string path_rules = AppDomain.CurrentDomain.BaseDirectory.ToString() + "game_rules.txt";
         public string path_rating = AppDomain.CurrentDomain.BaseDirectory.ToString() + "rating.txt";
+        public string path_theme = AppDomain.CurrentDomain.BaseDirectory.ToString() + "theme.txt";
 
+        public bool theme = false;
+
+        private void theme_read()
+        {
+            using (StreamReader reader = new StreamReader(path_theme))
+            {
+                theme = Convert.ToBoolean(reader.ReadLine());
+            }
+        }
+
+        private void theme_write()
+        {
+            using (StreamWriter writer = new StreamWriter(path_theme, false))
+            {
+                if (theme==true)
+                {
+                    writer.WriteLine("true");
+                }
+                else { writer.WriteLine("false"); }
+            }
+        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            theme_read();
+            if(theme==true)
+            {
+                this.BackColor = Color.FromArgb(255, 255, 192);
+                button5.Text = "—¬≈“À¿ﬂ\n“≈Ã¿";
+            }
+            else
+            {
+                this.BackColor = Color.FromArgb(70, 50, 160);
+                button5.Text = "“®ÃÕ¿ﬂ\n“≈Ã¿";
+            }
             update_table();
         }
         private void update_table()
@@ -34,14 +67,8 @@ namespace _21_point
         }
         private async void button1_Click(object sender, EventArgs e)
         {
-            Form2 f2 = new Form2(this);
+            Form2 f2 = new Form2(this, theme);
             f2.Show();
-            /*
-                using (StreamWriter sw = new StreamWriter("data.txt", true))
-                {
-                    await sw.WriteLineAsync("1000");
-            }*/
-
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -66,5 +93,22 @@ namespace _21_point
             update_table();
         }
 
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (theme == true)
+            {
+                theme = false;
+                this.BackColor = Color.FromArgb(70, 50, 160);
+                button5.Text = "“®ÃÕ¿ﬂ\n“≈Ã¿";
+                theme_write();
+            }
+            else
+            {
+                theme = true;
+                this.BackColor = Color.FromArgb(255, 255, 192);
+                button5.Text = "—¬≈“À¿ﬂ\n“≈Ã¿";
+                theme_write();
+            }
+        }
     }
 }

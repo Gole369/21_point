@@ -66,18 +66,22 @@ namespace _21_point
             // 
             // button1
             // 
+            button1.BackColor = Color.FromArgb(224, 224, 224);
             button1.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            button1.ForeColor = SystemColors.ControlText;
+            button1.ImageAlign = ContentAlignment.MiddleLeft;
             button1.Location = new Point(461, 408);
             button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
             button1.Size = new Size(209, 60);
             button1.TabIndex = 2;
             button1.Text = "ВЗЯТЬ КАРТУ";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // button2
             // 
+            button2.BackColor = Color.FromArgb(224, 224, 224);
             button2.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 204);
             button2.Location = new Point(676, 408);
             button2.Margin = new Padding(3, 2, 3, 2);
@@ -85,7 +89,7 @@ namespace _21_point
             button2.Size = new Size(109, 60);
             button2.TabIndex = 3;
             button2.Text = "ПАС";
-            button2.UseVisualStyleBackColor = true;
+            button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
             // pictureBox1
@@ -120,6 +124,7 @@ namespace _21_point
             // 
             // button3
             // 
+            button3.BackColor = Color.FromArgb(255, 192, 128);
             button3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 204);
             button3.Location = new Point(724, 31);
             button3.Margin = new Padding(3, 2, 3, 2);
@@ -127,11 +132,12 @@ namespace _21_point
             button3.Size = new Size(61, 52);
             button3.TabIndex = 21;
             button3.Text = "МЕНЮ";
-            button3.UseVisualStyleBackColor = true;
+            button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
             // 
             // button4
             // 
+            button4.BackColor = Color.FromArgb(192, 255, 255);
             button4.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 204);
             button4.Location = new Point(629, 31);
             button4.Margin = new Padding(3, 2, 3, 2);
@@ -139,7 +145,7 @@ namespace _21_point
             button4.Size = new Size(90, 52);
             button4.TabIndex = 23;
             button4.Text = "ПРАВИЛА";
-            button4.UseVisualStyleBackColor = true;
+            button4.UseVisualStyleBackColor = false;
             button4.Click += button4_Click;
             // 
             // label3
@@ -270,6 +276,7 @@ namespace _21_point
             // 
             // button5
             // 
+            button5.BackColor = Color.FromArgb(224, 224, 224);
             button5.Enabled = false;
             button5.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 204);
             button5.Location = new Point(470, 31);
@@ -278,7 +285,7 @@ namespace _21_point
             button5.Size = new Size(154, 52);
             button5.TabIndex = 41;
             button5.Text = "ПРОДОЛЖИТЬ";
-            button5.UseVisualStyleBackColor = true;
+            button5.UseVisualStyleBackColor = false;
             button5.Click += button5_Click;
             // 
             // Form2
